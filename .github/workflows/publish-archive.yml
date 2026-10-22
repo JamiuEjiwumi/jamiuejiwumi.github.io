@@ -21,7 +21,7 @@ jobs:
       - name: Extract portfolio
         run: |
           set -euo pipefail
-          unzip -oq jamiu-world-class-portfolio.zip -d .
+          unzip -oq jamiu-world-class-portfolio.zip -d . -x ".github/workflows/*"
           for f in index.html work.html experience.html method.html profile.html styles.css script.js; do test -s "$f"; done
       - name: Commit extracted website files
         run: |
