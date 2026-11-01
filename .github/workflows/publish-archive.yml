@@ -37,6 +37,8 @@ jobs:
           python -m pip install --disable-pip-version-check 'reportlab==4.2.5'
           python scripts/generate_cv.py
           test -s assets/Jamiu_Ejiwumi_Senior_DevOps_CV.pdf
+      - name: Verify links and accessible page structure
+        run: python scripts/check_site.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
