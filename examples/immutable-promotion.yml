@@ -1,0 +1,30 @@
+# REFERENCE ONLY — demonstrates the build/promotion contract, not a deployable workflow.
+name: immutable-release-pattern
+on:
+  workflow_dispatch:
+    inputs:
+      image_digest:
+        description: "Previously built sha256 image digest"
+        required: true
+        type: string
+      environment:
+        description: "Target approved environment"
+        required: true
+        type: choice
+        options: [development, uat, production]
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  promote:
+    environment: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate immutable artifact identity
+        env:
+          DIGEST: ${{ inputs.image_digest }}
+        run: |
+          [[ "$DIGEST" =~ ^sha256:[a-f0-9]{64}$ ]] || exit 1
+          echo "Validated image digest format; real workflow must verify registry manifest and signature"
+      - name: Explain deployment contract
+        run: echo "Integrate OIDC-authenticated deployment, health checks and rollback here; never rebuild artifact during promotion"
