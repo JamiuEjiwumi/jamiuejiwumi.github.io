@@ -1,0 +1,27 @@
+name: Portfolio quality audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'styles.css'
+      - 'script.js'
+      - 'examples/**'
+      - 'scripts/check_site.py'
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate local links and accessible structure
+        run: python scripts/check_site.py
+      - name: Lighthouse performance and accessibility audit
+        continue-on-error: true
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: .lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: false
