@@ -40,3 +40,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 .recognition-teaser>span:last-child{color:var(--muted);font-size:13px}
 .recognition-teaser:hover,.recognition-teaser:focus-visible{border-color:var(--accent)}
 @media(max-width:760px){.recognition-grid{grid-template-columns:1fr}.recognition-highlight{padding:24px}}
+
+/* Public engineering evidence page */
+.evidence-layout{display:grid;gap:24px}.evidence-card{padding:clamp(20px,4vw,42px);border:1px solid var(--line);border-radius:10px;background:var(--panel)}.evidence-card h2{font-size:clamp(1.65rem,3vw,2.6rem);margin:.5em 0}.evidence-card p{max-width:850px}.diagram{margin:28px 0;display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:22px;border:1px solid var(--line);border-radius:8px;background:#081b28}.diagram span{display:inline-flex;align-items:center;min-height:58px;padding:14px;border:1px solid #467e84;background:#12333c;border-radius:8px;font:600 12px/1.4 'DM Sans',sans-serif}.diagram b{color:var(--accent)}@media(max-width:670px){.diagram{gap:8px;padding:13px}.diagram span{min-height:46px;padding:9px}}
