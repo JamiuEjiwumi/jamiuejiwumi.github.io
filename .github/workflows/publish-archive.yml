@@ -32,6 +32,11 @@ jobs:
             echo "::error::Legacy portfolio URL remains in site metadata"
             exit 1
           fi
+      - name: Build downloadable CV
+        run: |
+          python -m pip install --disable-pip-version-check 'reportlab==4.2.5'
+          python scripts/generate_cv.py
+          test -s assets/Jamiu_Ejiwumi_Senior_DevOps_CV.pdf
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
