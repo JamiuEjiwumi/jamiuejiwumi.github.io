@@ -43,3 +43,36 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 
 /* Public engineering evidence page */
 .evidence-layout{display:grid;gap:24px}.evidence-card{padding:clamp(20px,4vw,42px);border:1px solid var(--line);border-radius:10px;background:var(--panel)}.evidence-card h2{font-size:clamp(1.65rem,3vw,2.6rem);margin:.5em 0}.evidence-card p{max-width:850px}.diagram{margin:28px 0;display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:22px;border:1px solid var(--line);border-radius:8px;background:#081b28}.diagram span{display:inline-flex;align-items:center;min-height:58px;padding:14px;border:1px solid #467e84;background:#12333c;border-radius:8px;font:600 12px/1.4 'DM Sans',sans-serif}.diagram b{color:var(--accent)}@media(max-width:670px){.diagram{gap:8px;padding:13px}.diagram span{min-height:46px;padding:9px}}
+
+/* Writing & research: article preview and conceptual framework */
+.writing-banner{padding-bottom:48px}.writing-banner p{max-width:920px}
+.writing-feature{padding-top:50px}
+.writing-feature-header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.writing-status{border:1px solid #467e84;color:#b7e5d7;border-radius:99px;padding:7px 12px;font:11px 'DM Sans',sans-serif}
+.writing-feature-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.78fr);gap:56px}
+.writing-feature h2{font-size:clamp(2rem,3.65vw,3.65rem);margin:0 0 24px;max-width:780px}
+.writing-deck{color:var(--accent);font-size:18px;line-height:1.5}
+.writing-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.writing-context{border:1px solid var(--line);background:var(--panel);padding:28px;border-radius:10px;align-self:start}
+.writing-context dl{margin:18px 0}.writing-context dl div{padding:11px 0;border-bottom:1px solid var(--line)}
+.writing-context dt{font:700 10px 'DM Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.writing-context dd{margin:5px 0 0;color:var(--text);font-size:14px;line-height:1.5}
+.value-chain{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px;list-style:none;padding:0;margin:30px 0 18px}
+.value-chain li{position:relative;display:flex;flex-direction:column;gap:13px;min-width:0;min-height:210px;background:#102b38;border:1px solid #35616c;border-radius:10px;padding:16px 12px}
+.value-chain li:not(:last-child):after{content:'→';color:var(--accent);position:absolute;right:-14px;top:42px;font-size:20px;z-index:1}
+.chain-index{font:700 12px 'Space Grotesk',sans-serif;color:var(--accent)}
+.value-chain strong{display:block;font-size:14px;line-height:1.4;letter-spacing:-.02em}
+.value-chain small{display:block;font-size:12px;line-height:1.6;color:var(--muted);margin-top:12px}
+.writing-framework-note{max-width:850px;margin-top:20px;font-size:13px;border-left:2px solid var(--accent);padding-left:17px}
+.writing-themes{margin-top:33px}
+.writing-academic{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:start}
+.writing-academic h2{font-size:clamp(2rem,4vw,3.8rem)}
+.writing-home{display:grid;grid-template-columns:1.35fr .8fr;gap:55px;align-items:center;padding-block:85px}
+.writing-home h2{font-size:clamp(2rem,3.9vw,4rem)}
+.writing-home-aside{padding:30px;border:1px solid #3d6770;background:#0f2b35;border-radius:10px}
+.writing-home-aside h3{font-size:26px}
+.writing-home-aside .tags{margin-top:28px}
+@media(max-width:1050px){.value-chain{grid-template-columns:repeat(4,minmax(0,1fr))}.value-chain li{min-height:165px}.value-chain li:after{display:none}}
+@media(max-width:760px){.writing-feature-grid,.writing-academic,.writing-home{grid-template-columns:1fr;gap:25px}.writing-home{padding-block:60px}.value-chain{grid-template-columns:repeat(2,minmax(0,1fr))}.value-chain li{min-height:170px}.writing-context{padding:22px}}
+@media(max-width:420px){.value-chain{grid-template-columns:1fr}.value-chain li{min-height:unset;display:grid;grid-template-columns:35px 1fr}.value-chain small{margin-top:5px}.writing-feature h2{font-size:2rem}}
+@media print{.value-chain{grid-template-columns:repeat(2,1fr)}.value-chain li{min-height:110px}.writing-actions{display:none}}
